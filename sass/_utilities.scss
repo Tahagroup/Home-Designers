@@ -1,0 +1,28 @@
+@mixin dividerTitle($topMargin, $bottomMargin) {
+  .dividerTitle__title {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: $topMargin 16px $bottomMargin 16px;
+    .line {
+      flex-shrink: 0;
+      width: 40px;
+      height: 4px;
+      align-self: flex-start;
+      margin-top: 11px;
+      background-color: $primary;
+    }
+    .text {
+      font-family: "Montserrat";
+
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+      align-items: center;
+    }
+  }
+}
+@mixin container {
+  margin-right: 16px;
+  margin-left: 16px;
+}

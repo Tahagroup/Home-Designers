@@ -1,79 +1,20 @@
-$black: #000;
-$white: #ffffff;
-$primary: #0d6b6a;
-$light-gray: #dddddd;
-$dark-gray: #666666;
-$gray: #aaaaaa;
-
-@mixin dividerTitle($topMargin, $bottomMargin) {
-  .dividerTitle__title {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin: $topMargin 16px $bottomMargin 16px;
-    .line {
-      width: 40px;
-      height: 4px;
-      align-self: flex-start;
-      margin-top: 11px;
-      background-color: $primary;
-    }
-    .text {
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 28px;
-      align-items: center;
-    }
-  }
-}
-@mixin container {
-  margin-right: 16px;
-  margin-left: 16px;
-}
+@import "utilities";
+@import "colors";
+html,
 body {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  font-style: normal;
   margin: 0;
   padding: 0;
-}
 
 .menu {
   background-image: url("../assets/images/stone-bg.jpg");
   background-size: cover;
-  height: 56px;
-  left: 0px;
-  top: 0px;
-
+  width: 100%;
+  height: 58px;
   .hamburger {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 8px;
-    text-align: center;
-
-    .ham__line--top {
-      position: absolute;
-      top: 15px;
-      background-color: #292d32;
-      width: 18px;
-      height: 1.5px;
-    }
-    .ham__line--middle {
-      position: absolute;
-      top: 20px;
-      background-color: #292d32;
-      width: 18px;
-      height: 1.5px;
-    }
-    .ham__line--bottom {
-      position: absolute;
-      top: 25px;
-      background-color: #292d32;
-      width: 18px;
-      height: 1.5px;
-    }
+    margin: 8px;
   }
 }
 // Section 1
@@ -85,7 +26,9 @@ body {
   // margin-bottom: 80px;
 
   .header__title {
-    font-style: normal;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
     font-weight: 700;
     font-size: 48px;
     line-height: 50px;
@@ -97,18 +40,17 @@ body {
   .header__summary {
     color: $dark-gray;
     margin-bottom: 32px;
-    margin-top: 24px;
   }
   .header__btn {
     display: flex;
     place-items: center;
+    border: none;
     background: $primary;
     color: $white;
     width: 170px;
     padding: 8px 16px;
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
-    border: none;
   }
   .header__image {
     // override container margin
@@ -136,15 +78,14 @@ body {
     color: $white;
     padding: 16px;
     .num {
-      font-style: normal;
       font-weight: 700;
       font-size: 150px;
       line-height: 120px;
-      padding: 40px;
+      padding: 30px;
     }
     .text {
       margin-bottom: 24px;
-      font-style: normal;
+
       font-weight: 600;
       font-size: 24px;
       line-height: 32px;
@@ -170,7 +111,6 @@ body {
       align-items: center;
       gap: 20px;
       .identity {
-        font-style: normal;
         .name {
           font-weight: 600;
           font-size: 18px;
@@ -178,7 +118,6 @@ body {
           margin-bottom: 4px;
         }
         .company {
-          font-style: normal;
           font-weight: 500;
           font-size: 14px;
           line-height: 16px;
@@ -190,7 +129,7 @@ body {
       color: $dark-gray;
       margin-top: 20px;
       margin-bottom: 20px;
-      font-style: normal;
+
       font-weight: 500;
       font-size: 16px;
       line-height: 20px;
@@ -220,6 +159,8 @@ body {
 
 .section4 {
   @include dividerTitle(0, 40px);
+  background-color: $background;
+  padding-bottom: 80px;
   #extra-padding {
     padding-top: 40px;
   }
@@ -237,7 +178,7 @@ body {
         .header__title {
           color: $black;
           z-index: 1;
-          font-style: normal;
+
           font-weight: 700;
           font-size: 18px;
           line-height: 24px;
@@ -245,7 +186,7 @@ body {
         .num {
           color: $light-gray;
           margin-left: -12px;
-          font-style: normal;
+
           font-weight: 700;
           font-size: 52px;
           line-height: 28px;
@@ -261,7 +202,7 @@ body {
 
           .text {
             padding-left: 20px;
-            font-style: normal;
+
             font-weight: 600;
             font-size: 18px;
             line-height: 24px;
@@ -272,7 +213,7 @@ body {
           margin-left: 9px;
           border-left: $light-gray 2px solid;
           color: $dark-gray;
-          font-style: normal;
+
           font-weight: 500;
           font-size: 14px;
           line-height: 20px;
@@ -287,11 +228,124 @@ body {
     }
   }
   .number__form {
+    background-color: $white;
+    @include container;
     .house {
       display: block;
       margin: auto;
       margin-top: -110px;
     }
-    @include dividerTitle(60px, 20px);
+    .padding {
+      padding-left: 20px;
+      padding-right: 20px;
+      @include dividerTitle(60px, 20px);
+      #less-margin {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 20px;
+        .tel {
+          border: 1px solid $light-gray;
+          padding: 10px 16px;
+          color: $gray;
+          font-family: "Montserrat";
+
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+        }
+        .submit {
+          display: flex;
+          place-items: center;
+          justify-content: center;
+          border: none;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          color: $white;
+          background-color: $primary;
+          font-family: "Montserrat";
+
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 24px;
+          img {
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $primary;
+  color: $white;
+  text-align: center;
+  .bow {
+    padding-top: 20px;
+  }
+  .footer__title {
+    margin-top: -24px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 0.08em;
+  }
+  .footer__desc {
+    @include container;
+    color: $light-gray;
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .icons {
+    margin-bottom: 48px;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  .contact-info {
+    margin-top: -24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .contact {
+      .call-icon {
+        margin-bottom: 8px;
+      }
+      .text {
+        color: $light-gray;
+        margin-bottom: 4px;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+      }
+      .info {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+  }
+  .rights {
+    color: $light-gray;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 80px;
+    padding-bottom: 40px;
   }
 }
