@@ -1,0 +1,297 @@
+$black: #000;
+$white: #ffffff;
+$primary: #0d6b6a;
+$light-gray: #dddddd;
+$dark-gray: #666666;
+$gray: #aaaaaa;
+
+@mixin dividerTitle($topMargin, $bottomMargin) {
+  .dividerTitle__title {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: $topMargin 16px $bottomMargin 16px;
+    .line {
+      width: 40px;
+      height: 4px;
+      align-self: flex-start;
+      margin-top: 11px;
+      background-color: $primary;
+    }
+    .text {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+      align-items: center;
+    }
+  }
+}
+@mixin container {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  background-image: url("../assets/images/stone-bg.jpg");
+  background-size: cover;
+  height: 56px;
+  left: 0px;
+  top: 0px;
+
+  .hamburger {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 8px;
+    text-align: center;
+
+    .ham__line--top {
+      position: absolute;
+      top: 15px;
+      background-color: #292d32;
+      width: 18px;
+      height: 1.5px;
+    }
+    .ham__line--middle {
+      position: absolute;
+      top: 20px;
+      background-color: #292d32;
+      width: 18px;
+      height: 1.5px;
+    }
+    .ham__line--bottom {
+      position: absolute;
+      top: 25px;
+      background-color: #292d32;
+      width: 18px;
+      height: 1.5px;
+    }
+  }
+}
+// Section 1
+.section1 {
+  display: flex;
+  flex-direction: column;
+  margin: auto 16px;
+  text-align: left;
+  // margin-bottom: 80px;
+
+  .header__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 50px;
+
+    .grayish {
+      color: $primary;
+    }
+  }
+  .header__summary {
+    color: $dark-gray;
+    margin-bottom: 32px;
+    margin-top: 24px;
+  }
+  .header__btn {
+    display: flex;
+    place-items: center;
+    background: $primary;
+    color: $white;
+    width: 170px;
+    padding: 8px 16px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    border: none;
+  }
+  .header__image {
+    // override container margin
+    margin: 87px -16px 135px -16px;
+    .shape {
+      display: flex;
+      place-items: center;
+      height: 228px;
+      background-color: $primary;
+      .image {
+        // padding: 20px;
+        margin: 0px auto;
+        width: 328px;
+        height: 338px;
+      }
+    }
+  }
+}
+
+.section2 {
+  @include dividerTitle(0, 32px);
+  @include container;
+  .team-num {
+    background-color: $primary;
+    color: $white;
+    padding: 16px;
+    .num {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 150px;
+      line-height: 120px;
+      padding: 40px;
+    }
+    .text {
+      margin-bottom: 24px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  .team-pic {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      width: 50%;
+    }
+  }
+}
+
+.section3 {
+  @include container;
+  @include dividerTitle(80px, 32px);
+  .comment-card {
+    box-shadow: 0px 0px 30px rgba(13, 107, 106, 0.1);
+    padding: 20px;
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .identity {
+        font-style: normal;
+        .name {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 20px;
+          margin-bottom: 4px;
+        }
+        .company {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          color: $gray;
+        }
+      }
+    }
+    .text {
+      color: $dark-gray;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    .right {
+      padding: 8px;
+      width: 24px;
+      height: 24px;
+      padding: 8px;
+      background-color: $primary;
+    }
+    .left {
+      width: 24px;
+      height: 24px;
+      padding: 8px;
+      background-color: $light-gray;
+    }
+  }
+}
+
+.section4 {
+  @include dividerTitle(0, 40px);
+  #extra-padding {
+    padding-top: 40px;
+  }
+  .pic-wrapper {
+    background-image: url("../assets/images/long-bg.jpg");
+    padding-bottom: 110px;
+    .part {
+      @include container;
+      margin-bottom: 40px;
+      .part__header {
+        display: flex;
+        align-items: center;
+        border-bottom: $light-gray 2px solid;
+        padding-bottom: 16px;
+        .header__title {
+          color: $black;
+          z-index: 1;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+        }
+        .num {
+          color: $light-gray;
+          margin-left: -12px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 52px;
+          line-height: 28px;
+        }
+      }
+      .part__body {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+        .body__title {
+          margin-top: 16px;
+          display: flex;
+
+          .text {
+            padding-left: 20px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+        .body__desc {
+          padding-left: 30px;
+          margin-left: 9px;
+          border-left: $light-gray 2px solid;
+          color: $dark-gray;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          .item {
+            padding-top: 20px;
+            &:last-child {
+              padding-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .number__form {
+    .house {
+      display: block;
+      margin: auto;
+      margin-top: -110px;
+    }
+    @include dividerTitle(60px, 20px);
+  }
+}
