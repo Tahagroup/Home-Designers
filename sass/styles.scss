@@ -1,5 +1,17 @@
 @import "utilities";
 @import "colors";
+@import "desktop";
+
+.desktop-only {
+  @include desktop {
+    display: none;
+  }
+}
+.mobile-only {
+  @include mobile {
+    display: none;
+  }
+}
 html,
 body {
   box-sizing: border-box;
@@ -20,52 +32,104 @@ body {
 }
 // Section 1
 .section1 {
-  display: flex;
-  flex-direction: column;
-  margin: auto 16px;
+  // display: flex;
+  // @include container;
   text-align: left;
-  // margin-bottom: 80px;
-
-  .header__title {
-    margin-top: 24px;
-    margin-bottom: 24px;
-
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 50px;
-
-    .grayish {
-      color: $primary;
+  @include desktop {
+    background-image: url("../assets/images/stone-bg.jpg");
+  }
+  .desktop-header {
+    // only for desktop:
+    @media (max-width: $large-width) {
+      display: none;
+    }
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+    // @include container;
+    .desktop-header__title {
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 30px;
+      letter-spacing: 0.08em;
+    }
+    .desktop-header__menu {
+      display: flex;
+      gap: 30px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      list-style: none;
+      // .desktop-header__item {
+      // }
+      .active {
+        color: $primary;
+      }
+    }
+    .desktop-header__login {
+      background-color: $primary;
+      color: white;
+      padding: 10px 28px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
     }
   }
-  .header__summary {
-    color: $dark-gray;
-    margin-bottom: 32px;
-  }
-  .header__btn {
+  .header-flex {
+    @include container;
     display: flex;
-    place-items: center;
-    border: none;
-    background: $primary;
-    color: $white;
-    width: 170px;
-    padding: 8px 16px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-  }
-  .header__image {
-    // override container margin
-    margin: 87px -16px 135px -16px;
-    .shape {
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+    }
+    .header__title {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 50px;
+
+      .grayish {
+        color: $primary;
+      }
+    }
+    .header__summary {
+      color: $dark-gray;
+      margin-bottom: 32px;
+    }
+    .header__btn {
       display: flex;
       place-items: center;
-      height: 228px;
-      background-color: $primary;
-      .image {
-        // padding: 20px;
-        margin: 0px auto;
-        width: 328px;
-        height: 338px;
+      border: none;
+      background: $primary;
+      color: $white;
+      width: 170px;
+      padding: 8px 16px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+    }
+    .header__image {
+      // override container (LR)margin
+      margin: 87px -16px 135px -16px;
+      @include desktop {
+        margin: 87px -16px 135px 180px;
+      }
+      .shape {
+        display: flex;
+        place-items: center;
+        height: 228px;
+        background-color: $primary;
+        @include desktop {
+          place-items: unset;
+          margin: -30px 0px 0px 0px;
+        }
+        .image {
+          // padding: 20px;
+          margin: 0px auto;
+          width: 328px;
+          height: 338px;
+        }
       }
     }
   }
@@ -73,30 +137,42 @@ body {
 
 .section2 {
   @include dividerTitle(0, 32px);
-  @include container;
-  .team-num {
-    background-color: $primary;
-    color: $white;
-    padding: 16px;
-    .num {
-      font-weight: 700;
-      font-size: 150px;
-      line-height: 120px;
-      padding: 30px;
-    }
-    .text {
-      margin-bottom: 24px;
-
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 32px;
-    }
+  @include desktop {
+    @include dividerTitle(80px, 32px);
   }
-  .team-pic {
+  @include container;
+  .team-flex {
     display: flex;
-    flex-wrap: wrap;
-    img {
-      width: 50%;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+    }
+    .team-num {
+      background-color: $primary;
+      color: $white;
+      padding: 16px;
+      .num {
+        font-weight: 700;
+        font-size: 150px;
+        line-height: 120px;
+        padding: 30px;
+      }
+      .text {
+        margin-bottom: 24px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+    .team-pic {
+      display: flex;
+      flex-wrap: wrap;
+      img {
+        width: 50%;
+        @include desktop {
+          width: 33%;
+        }
+      }
     }
   }
 }
@@ -104,36 +180,46 @@ body {
 .section3 {
   @include container;
   @include dividerTitle(80px, 32px);
-  .comment-card {
-    box-shadow: 0px 0px 30px rgba(13, 107, 106, 0.1);
-    padding: 20px;
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      .identity {
-        .name {
-          font-weight: 600;
-          font-size: 18px;
-          line-height: 20px;
-          margin-bottom: 4px;
-        }
-        .company {
-          font-weight: 500;
-          font-size: 14px;
-          line-height: 16px;
-          color: $gray;
+  .card-flex {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+    }
+    .comment-card {
+      box-shadow: 0px 0px 30px rgba(13, 107, 106, 0.1);
+      padding: 20px;
+      @include desktop {
+        margin-left: 20px;
+      }
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .identity {
+          .name {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 4px;
+          }
+          .company {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: $gray;
+          }
         }
       }
-    }
-    .text {
-      color: $dark-gray;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      .text {
+        color: $dark-gray;
+        margin-top: 20px;
+        margin-bottom: 20px;
 
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 20px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
   }
   .buttons {
@@ -159,87 +245,124 @@ body {
 }
 
 .section4 {
-  @include dividerTitle(0, 40px);
-  background-color: $background;
+  // background-color: $background;
   padding-bottom: 80px;
-  #extra-padding {
-    padding-top: 40px;
+  @include desktop {
+    padding-bottom: 0px;
   }
   .pic-wrapper {
+    @include pad-container;
+    @include dividerTitle(0, 40px);
     background-image: url("../assets/images/long-bg.jpg");
+    background-size: cover;
     padding-bottom: 110px;
-    .part {
-      @include container;
-      margin-bottom: 40px;
-      .part__header {
-        display: flex;
-        align-items: center;
-        border-bottom: $light-gray 2px solid;
-        padding-bottom: 16px;
-        .header__title {
-          color: $black;
-          z-index: 1;
-
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 24px;
-        }
-        .num {
-          color: $light-gray;
-          margin-left: -12px;
-
-          font-weight: 700;
-          font-size: 52px;
-          line-height: 28px;
-        }
+    @include desktop {
+      padding-bottom: 0px;
+    }
+    #extra-padding {
+      padding-top: 40px;
+    }
+    .part-flex {
+      display: flex;
+      flex-direction: column;
+      @include desktop {
+        flex-direction: row;
       }
-      .part__body {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 16px;
-        .body__title {
-          margin-top: 16px;
+      .part {
+        @include container;
+        @include container-override;
+        @include desktop {
+        }
+        margin-bottom: 40px;
+        .part__header {
           display: flex;
+          align-items: center;
+          border-bottom: $light-gray 2px solid;
+          padding-bottom: 16px;
+          .header__title {
+            color: $black;
+            z-index: 1;
 
-          .text {
-            padding-left: 20px;
-
-            font-weight: 600;
+            font-weight: 700;
             font-size: 18px;
             line-height: 24px;
           }
-        }
-        .body__desc {
-          padding-left: 30px;
-          margin-left: 9px;
-          border-left: $light-gray 2px solid;
-          color: $dark-gray;
+          .num {
+            color: $light-gray;
+            margin-left: -12px;
 
-          font-weight: 500;
-          font-size: 14px;
-          line-height: 20px;
-          .item {
-            padding-top: 20px;
-            &:last-child {
-              padding-bottom: 20px;
+            font-weight: 700;
+            font-size: 52px;
+            line-height: 28px;
+          }
+        }
+        .part__body {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+          .body__title {
+            margin-top: 16px;
+            display: flex;
+
+            .text {
+              padding-left: 20px;
+
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 24px;
+            }
+          }
+          .body__desc {
+            padding-left: 30px;
+            margin-left: 9px;
+            border-left: $light-gray 2px solid;
+            color: $dark-gray;
+
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            .item {
+              padding-top: 20px;
+              &:last-child {
+                padding-bottom: 20px;
+              }
             }
           }
         }
       }
     }
   }
+
+  .house {
+    display: block;
+    margin: auto;
+    margin-top: -110px;
+    @include desktop {
+      width: 40%;
+      height: auto;
+      margin-top: -250px;
+      margin-right: 300px;
+      margin-left: auto;
+    }
+  }
   .number__form {
-    background-color: $white;
+    background: white;
+    box-shadow: -10px 10px 50px rgba(13, 107, 106, 0.08);
     @include container;
-    .house {
-      display: block;
-      margin: auto;
-      margin-top: -110px;
+    @include desktop {
+      position: relative;
+      margin-top: -90px;
+      margin-right: 400px;
+      z-index: 2;
     }
     .padding {
       padding-left: 20px;
       padding-right: 20px;
       @include dividerTitle(60px, 20px);
+      @include desktop {
+        padding: 40px;
+        @include dividerTitle(0px, 20px);
+      }
       #less-margin {
         margin-right: 0;
         margin-left: 0;
@@ -254,10 +377,12 @@ body {
           padding: 10px 16px;
           color: $gray;
           font-family: "Montserrat";
-
           font-weight: 500;
           font-size: 16px;
           line-height: 20px;
+          @include desktop {
+            // width: 75%;
+          }
         }
         .submit {
           display: flex;
@@ -269,10 +394,12 @@ body {
           color: $white;
           background-color: $primary;
           font-family: "Montserrat";
-
           font-weight: 400;
           font-size: 18px;
           line-height: 24px;
+          @include desktop {
+            // width: 25%;
+          }
           img {
             margin-left: 16px;
           }

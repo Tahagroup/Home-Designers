@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
   <body>
-    <nav class="menu">
+    <nav class="desktop-only menu">
       <img
         class="hamburger"
         src="../dist/assets/images/hamburger.svg"
@@ -31,20 +31,36 @@
       />
     </nav>
     <div class="section1">
-      <div class="header__title">
-        We Make Your H<span class="grayish">o</span>me Better Today
+      <!-- desktop header -->
+      <div class="desktop-header">
+        <div class="desktop-header__title">IN.DESIGN</div>
+        <ul class="desktop-header__menu">
+          <li class="desktop-header__item active">Home</li>
+          <li class="desktop-header__item">About Us</li>
+          <li class="desktop-header__item">Services</li>
+          <li class="desktop-header__item">Portfolio</li>
+          <li class="desktop-header__item">Contacts</li>
+        </ul>
+        <div class="desktop-header__login">Register/Login</div>
       </div>
-      <div class="header__summary">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur.
-      </div>
-      <button class="header__btn">
-        TO ORDER &nbsp
-        <img src="../dist/assets/images/arrow.svg" alt="arrow SVG" />
-      </button>
-      <div class="header__image">
-        <div class="shape">
-          <img class="image" src="../dist/assets/images/image.jpg" />
+      <div class="header-flex">
+        <div>
+          <div class="header__title">
+            We Make Your H<span class="grayish">o</span>me Better Today
+          </div>
+          <div class="header__summary">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.
+          </div>
+          <button class="header__btn">
+            TO ORDER &nbsp
+            <img src="../dist/assets/images/arrow.svg" alt="arrow SVG" />
+          </button>
+        </div>
+        <div class="header__image">
+          <div class="shape">
+            <img class="image" src="../dist/assets/images/image.jpg" />
+          </div>
         </div>
       </div>
     </div>
@@ -53,20 +69,22 @@
         <span class="line"></span>
         <div class="text">A team United by shared values</div>
       </div>
-      <div class="team-num">
-        <div class="num">
-          6
-          <!-- <img src="../dist/assets/images/6.png" alt="six SVG" /> -->
+      <div class="team-flex">
+        <div class="team-num">
+          <div class="num">
+            6
+            <!-- <img src="../dist/assets/images/6.png" alt="six SVG" /> -->
+          </div>
+          <div class="text">Professional designers in our team</div>
         </div>
-        <div class="text">Professional designers in our team</div>
-      </div>
-      <div class="team-pic">
-        <img src="../dist/assets/images/woman.jpg" />
-        <img src="../dist/assets/images/man.jpg" />
-        <img src="../dist/assets/images/man.jpg" />
-        <img src="../dist/assets/images/woman.jpg" />
-        <img src="../dist/assets/images/woman.jpg" />
-        <img src="../dist/assets/images/man.jpg" />
+        <div class="team-pic">
+          <img src="../dist/assets/images/woman.jpg" />
+          <img src="../dist/assets/images/man.jpg" />
+          <img src="../dist/assets/images/man.jpg" />
+          <img src="../dist/assets/images/woman.jpg" />
+          <img src="../dist/assets/images/woman.jpg" />
+          <img src="../dist/assets/images/man.jpg" />
+        </div>
       </div>
     </div>
     <div class="section3">
@@ -74,26 +92,72 @@
         <span class="line"></span>
         <div class="text">Thanks for your sweet words to us</div>
       </div>
-      <div class="comment-card">
-        <div class="profile">
-          <img class="image" src="../dist/assets/images/profile.jpg" />
-          <div class="identity">
-            <div class="name">Sara Cristian</div>
-            <div class="company">Nationwide Group</div>
+      <!-- Card1  -->
+      <div class="card-flex">
+        <div class="comment-card">
+          <div class="profile">
+            <img class="image" src="../dist/assets/images/profile.jpg" />
+            <div class="identity">
+              <div class="name">Sara Cristian</div>
+              <div class="company">Nationwide Group</div>
+            </div>
+          </div>
+          <div class="text">
+            Convallis posuere morbi leo urna molestie at elementum eu facilisis.
+            Nunc sed blandit libero volutpat sed cras.
+          </div>
+          <div class="rating">
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
           </div>
         </div>
-        <div class="text">
-          Convallis posuere morbi leo urna molestie at elementum eu facilisis.
-          Nunc sed blandit libero volutpat sed cras.
+        <!-- Card2  -->
+        <div class="mobile-only comment-card">
+          <div class="profile">
+            <img class="image" src="../dist/assets/images/profile.jpg" />
+            <div class="identity">
+              <div class="name">Sara Cristian</div>
+              <div class="company">Nationwide Group</div>
+            </div>
+          </div>
+          <div class="text">
+            Convallis posuere morbi leo urna molestie at elementum eu facilisis.
+            Nunc sed blandit libero volutpat sed cras.
+          </div>
+          <div class="rating">
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+          </div>
         </div>
-        <div class="rating">
-          <img src="../dist/assets/images/star.svg" alt="" />
-          <img src="../dist/assets/images/star.svg" alt="" />
-          <img src="../dist/assets/images/star.svg" alt="" />
-          <img src="../dist/assets/images/star.svg" alt="" />
-          <img src="../dist/assets/images/star.svg" alt="" />
+        <!-- Card3  -->
+        <div class="mobile-only comment-card">
+          <div class="profile">
+            <img class="image" src="../dist/assets/images/profile.jpg" />
+            <div class="identity">
+              <div class="name">Sara Cristian</div>
+              <div class="company">Nationwide Group</div>
+            </div>
+          </div>
+          <div class="text">
+            Convallis posuere morbi leo urna molestie at elementum eu facilisis.
+            Nunc sed blandit libero volutpat sed cras.
+          </div>
+          <div class="rating">
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+            <img src="../dist/assets/images/star.svg" alt="" />
+          </div>
         </div>
       </div>
+
       <div class="buttons">
         <img class="left" src="../dist/assets/images/prev-page.svg" />
         <img class="right" src="../dist/assets/images/next-page.svg" />
@@ -107,282 +171,250 @@
           <div class="text">Our work process make your dream true</div>
         </div>
         <!-- part 1 -->
-        <div class="part">
-          <div class="part__header">
-            <div class="header__title">
-              Architectural<br />
-              development
-            </div>
-            <div class="num">01.</div>
-          </div>
-          <!-- 1 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
+        <div class="part-flex">
+          <div class="part">
+            <div class="part__header">
+              <div class="header__title">
                 Architectural<br />
                 development
               </div>
+              <div class="num">01.</div>
             </div>
-            <div class="body__desc">
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+            <!-- 1 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Architectural<br />
+                  development
+                </div>
               </div>
-              <div class="item">
-                - Malesuada fames turpis egestas sed tempus urna et pharetra.
+              <div class="body__desc">
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">
+                  - Malesuada fames turpis egestas sed tempus urna et pharetra.
+                </div>
+              </div>
+            </div>
+            <!-- 2 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Viverra nibh<br />
+                  cras pulvinar
+                </div>
+              </div>
+              <div class="body__desc">
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Tristique senectus et netus et. Tellus in metus vulputate eu
+                  scelerisque.
+                </div>
+                <div class="item">
+                  - Consequat semper viverra nam libero justo. Convallis posuere
+                  morbi leo urna molestie at elementum eu.
+                </div>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Tellus in metus<br />
+                  vulputate
+                </div>
+              </div>
+              <div class="body__desc">
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Tristique senectus et netus et. Tellus in metus vulputate eu
+                  scelerisque. Vitae congue mauris rhoncus aenean vel elit.
+                </div>
+              </div>
+            </div>
+            <!-- 4 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Conceptual<br />
+                  design
+                </div>
+              </div>
+              <div class="body__desc">
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">- Convallis posuere morbi leo</div>
               </div>
             </div>
           </div>
-          <!-- 2 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Viverra nibh<br />
-                cras pulvinar
-              </div>
-            </div>
-            <div class="body__desc">
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
-              </div>
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Tristique senectus et netus et. Tellus in metus vulputate eu
-                scelerisque.
-              </div>
-              <div class="item">
-                - Consequat semper viverra nam libero justo. Convallis posuere
-                morbi leo urna molestie at elementum eu.
-              </div>
-            </div>
-          </div>
-          <!-- 3 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Tellus in metus<br />
-                vulputate
-              </div>
-            </div>
-            <div class="body__desc">
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
-              </div>
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Tristique senectus et netus et. Tellus in metus vulputate eu
-                scelerisque. Vitae congue mauris rhoncus aenean vel elit.
-              </div>
-            </div>
-          </div>
-          <!-- 4 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Conceptual<br />
-                design
-              </div>
-            </div>
-            <div class="body__desc">
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
-              </div>
-              <div class="item">- Convallis posuere morbi leo</div>
-            </div>
-          </div>
-        </div>
-        <!-- part 2 -->
-        <div class="part">
-          <div class="part__header">
-            <div class="header__title">
-              Architectural<br />
-              development
-            </div>
-            <div class="num">02.</div>
-          </div>
-          <!-- 1 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
+          <!-- part 2 -->
+          <div class="part">
+            <div class="part__header">
+              <div class="header__title">
                 Architectural<br />
                 development
               </div>
+              <div class="num">02.</div>
             </div>
-            <div class="body__desc">
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+            <!-- 1 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Architectural<br />
+                  development
+                </div>
               </div>
-              <div class="item">
-                - Malesuada fames turpis egestas sed tempus urna et pharetra.
-              </div>
-            </div>
-          </div>
-          <!-- 2 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Viverra nibh<br />
-                cras pulvinar
-              </div>
-            </div>
-            <div class="body__desc">
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
-              </div>
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Tristique senectus et netus et. Tellus in metus vulputate eu
-                scelerisque.
-              </div>
-              <div class="item">
-                - Consequat semper viverra nam libero justo. Convallis posuere
-                morbi leo urna molestie at elementum eu.
+              <div class="body__desc">
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">
+                  - Malesuada fames turpis egestas sed tempus urna et pharetra.
+                </div>
               </div>
             </div>
-          </div>
-          <!-- 3 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Tellus in metus<br />
-                vulputate
+            <!-- 2 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Viverra nibh<br />
+                  cras pulvinar
+                </div>
+              </div>
+              <div class="body__desc">
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Tristique senectus et netus et. Tellus in metus vulputate eu
+                  scelerisque.
+                </div>
+                <div class="item">
+                  - Consequat semper viverra nam libero justo. Convallis posuere
+                  morbi leo urna molestie at elementum eu.
+                </div>
               </div>
             </div>
-            <div class="body__desc">
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+            <!-- 3 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Tellus in metus<br />
+                  vulputate
+                </div>
               </div>
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Tristique senectus et netus et. Tellus in metus vulputate eu
-                scelerisque. Vitae congue mauris rhoncus aenean vel elit.
+              <div class="body__desc">
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Tristique senectus et netus et. Tellus in metus vulputate eu
+                  scelerisque. Vitae congue mauris rhoncus aenean vel elit.
+                </div>
               </div>
-            </div>
-          </div>
-          <!-- 4 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Conceptual<br />
-                design
-              </div>
-            </div>
-            <div class="body__desc">
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
-              </div>
-              <div class="item">- Convallis posuere morbi leo</div>
             </div>
           </div>
-        </div>
-        <!-- part 3 -->
-        <div class="part">
-          <div class="part__header">
-            <div class="header__title">
-              Architectural<br />
-              development
-            </div>
-            <div class="num">03.</div>
-          </div>
-          <!-- 1 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
+          <!-- part 3 -->
+          <div class="part">
+            <div class="part__header">
+              <div class="header__title">
                 Architectural<br />
                 development
               </div>
+              <div class="num">03.</div>
             </div>
-            <div class="body__desc">
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+            <!-- 1 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Architectural<br />
+                  development
+                </div>
               </div>
-              <div class="item">
-                - Malesuada fames turpis egestas sed tempus urna et pharetra.
-              </div>
-            </div>
-          </div>
-          <!-- 2 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Viverra nibh<br />
-                cras pulvinar
-              </div>
-            </div>
-            <div class="body__desc">
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
-              </div>
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Tristique senectus et netus et. Tellus in metus vulputate eu
-                scelerisque.
-              </div>
-              <div class="item">
-                - Consequat semper viverra nam libero justo. Convallis posuere
-                morbi leo urna molestie at elementum eu.
+              <div class="body__desc">
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">
+                  - Malesuada fames turpis egestas sed tempus urna et pharetra.
+                </div>
               </div>
             </div>
-          </div>
-          <!-- 3 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Tellus in metus<br />
-                vulputate
+            <!-- 2 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Viverra nibh<br />
+                  cras pulvinar
+                </div>
+              </div>
+              <div class="body__desc">
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Tristique senectus et netus et. Tellus in metus vulputate eu
+                  scelerisque.
+                </div>
+                <div class="item">
+                  - Consequat semper viverra nam libero justo. Convallis posuere
+                  morbi leo urna molestie at elementum eu.
+                </div>
               </div>
             </div>
-            <div class="body__desc">
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+            <!-- 3 -->
+            <div class="part__body">
+              <div class="body__title">
+                <img class="square" src="../dist/assets/images/square.svg" />
+                <div class="text">
+                  Tellus in metus<br />
+                  vulputate
+                </div>
               </div>
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Tristique senectus et netus et. Tellus in metus vulputate eu
-                scelerisque. Vitae congue mauris rhoncus aenean vel elit.
+              <div class="body__desc">
+                <div class="item">
+                  - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
+                </div>
+                <div class="item">- Convallis posuere morbi leo</div>
+                <div class="item">
+                  - Tristique senectus et netus et. Tellus in metus vulputate eu
+                  scelerisque. Vitae congue mauris rhoncus aenean vel elit.
+                </div>
               </div>
-            </div>
-          </div>
-          <!-- 4 -->
-          <div class="part__body">
-            <div class="body__title">
-              <img class="square" src="../dist/assets/images/square.svg" />
-              <div class="text">
-                Conceptual<br />
-                design
-              </div>
-            </div>
-            <div class="body__desc">
-              <div class="item">- Convallis posuere morbi leo</div>
-              <div class="item">
-                - Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus
-              </div>
-              <div class="item">- Convallis posuere morbi leo</div>
             </div>
           </div>
         </div>
       </div>
+      <img class="house" src="../dist/assets/images/house.jpg" />
       <div class="number__form">
-        <img class="house" src="../dist/assets/images/house.jpg" />
         <div class="padding">
           <div class="dividerTitle__title" id="less-margin">
-            <span class="line"></span>
             <div class="text">Our work process make your dream true</div>
+            <span class="line"></span>
           </div>
           <form>
             <input type="tel" class="tel" placeholder="Your phone number" />

@@ -14,7 +14,6 @@
     }
     .text {
       font-family: "Montserrat";
-
       font-weight: 700;
       font-size: 20px;
       line-height: 28px;
@@ -22,7 +21,27 @@
     }
   }
 }
+$desktop-gutter: 280px;
+$mobile-gutter: 16px;
 @mixin container {
-  margin-right: 16px;
-  margin-left: 16px;
+  margin-right: $mobile-gutter;
+  margin-left: $mobile-gutter;
+  @media (min-width: $large-width) {
+    margin-right: $desktop-gutter;
+    margin-left: $desktop-gutter;
+  }
+}
+@mixin container-override {
+  margin-right: $mobile-gutter;
+  margin-left: $mobile-gutter;
+  @media (min-width: $large-width) {
+    margin-right: unset;
+    margin-left: unset;
+  }
+}
+@mixin pad-container {
+  @media (min-width: $large-width) {
+    padding-right: $desktop-gutter;
+    padding-left: $desktop-gutter;
+  }
 }
