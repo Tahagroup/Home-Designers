@@ -45,3 +45,9 @@ $mobile-gutter: 16px;
     padding-left: $desktop-gutter;
   }
 }
+@mixin icon-hover {
+  &:hover {
+    filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg)
+      brightness(200%) contrast(94%);
+  }
+}

@@ -20,7 +20,82 @@ body {
   margin: 0;
   padding: 0;
 }
+// /////////////////////////////////////////////////////////
 
+.drawer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // not visible at first:
+  width: 0;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 2;
+  // top: 0;
+  // left: 0;
+  background-color: white;
+  transition: 0.5s;
+  // padding-top: 60px;
+  a {
+    // padding: 8px 8px 8px 32px;
+    // text-decoration: none;
+    // font-size: 25px;
+    // color: #818181;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+  }
+  .drawer__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("../assets/images/stone-bg.jpg");
+    background-size: cover;
+    padding: 16px;
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.08em;
+    }
+    .closebtn {
+      font-size: 36px;
+    }
+  }
+  .drawer__links {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+    a {
+      padding: 8px 16px 8px 16px;
+      color: black;
+      &:hover {
+        color: $primary;
+        background-color: $light-gray;
+      }
+    }
+  }
+  .divider {
+    flex-grow: 1;
+    // flex-basis: 1;
+  }
+  .drawer__login {
+    color: white;
+    background-color: $primary;
+    padding: 14px 0 14px 0;
+    text-align: center;
+  }
+}
+
+// @media screen and (max-height: 450px) {
+//   .drawer {
+//     padding-top: 15px;
+//   }
+//   .drawer a {
+//     font-size: 18px;
+//   }
+// }
+// /////////////////////////////////////////////////////////
 .menu {
   background-image: url("../assets/images/stone-bg.jpg");
   background-size: cover;
@@ -458,6 +533,10 @@ footer {
   }
   .icons {
     margin-bottom: 48px;
+    img {
+      @include icon-hover;
+    }
+
     @include desktop {
       margin-bottom: 32px;
     }
@@ -508,6 +587,7 @@ footer {
           @include desktop {
             margin-bottom: 0px;
           }
+          @include icon-hover;
           // flex-shrink: 0;
         }
         .margin-left {

@@ -19,6 +19,62 @@ body {
   padding: 0;
 }
 
+.drawer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+  transition: 0.5s;
+}
+.drawer a {
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+.drawer .drawer__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../assets/images/stone-bg.jpg");
+  background-size: cover;
+  padding: 16px;
+}
+.drawer .drawer__title .title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+}
+.drawer .drawer__title .closebtn {
+  font-size: 36px;
+}
+.drawer .drawer__links {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 40px;
+}
+.drawer .drawer__links a {
+  padding: 8px 16px 8px 16px;
+  color: black;
+}
+.drawer .drawer__links a:hover {
+  color: #0d6b6a;
+  background-color: #dddddd;
+}
+.drawer .divider {
+  flex-grow: 1;
+}
+.drawer .drawer__login {
+  color: white;
+  background-color: #0d6b6a;
+  padding: 14px 0 14px 0;
+  text-align: center;
+}
+
 .menu {
   background-image: url("../assets/images/stone-bg.jpg");
   background-size: cover;
@@ -645,6 +701,9 @@ footer .footer__desc {
 footer .icons {
   margin-bottom: 48px;
 }
+footer .icons img:hover {
+  filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg) brightness(200%) contrast(94%);
+}
 @media (min-width: 700px) {
   footer .icons {
     margin-bottom: 32px;
@@ -716,6 +775,9 @@ footer .contact-info .contact-flex .contact .call-icon {
   footer .contact-info .contact-flex .contact .call-icon {
     margin-bottom: 0px;
   }
+}
+footer .contact-info .contact-flex .contact .call-icon:hover {
+  filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg) brightness(200%) contrast(94%);
 }
 @media (min-width: 700px) {
   footer .contact-info .contact-flex .contact .margin-left {
