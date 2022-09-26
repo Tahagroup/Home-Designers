@@ -7,6 +7,7 @@ body {
   font-style: normal;
   margin: 0;
   padding: 0;
+}
 
 .menu {
   background-image: url("../assets/images/stone-bg.jpg");
@@ -287,6 +288,8 @@ footer {
   text-align: center;
   .bow {
     padding-top: 20px;
+    // width: 100%;
+    // height: auto;
   }
   .footer__title {
     margin-top: -24px;
