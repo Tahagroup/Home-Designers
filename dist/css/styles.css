@@ -1,11 +1,11 @@
 @media (min-width: 700px) {
-  .desktop-only {
+  .mobile-only {
     display: none;
   }
 }
 
 @media (max-width: 700px) {
-  .mobile-only {
+  .desktop-only {
     display: none;
   }
 }
@@ -198,10 +198,12 @@ body {
 .section2 .team-flex {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
 }
 @media (min-width: 700px) {
   .section2 .team-flex {
     flex-direction: row;
+    align-content: center;
   }
 }
 .section2 .team-flex .team-num {
@@ -209,11 +211,24 @@ body {
   color: #ffffff;
   padding: 16px;
 }
+@media (min-width: 700px) {
+  .section2 .team-flex .team-num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .section2 .team-flex .team-num .num {
   font-weight: 700;
   font-size: 150px;
   line-height: 120px;
   padding: 30px;
+}
+@media (min-width: 700px) {
+  .section2 .team-flex .team-num .num {
+    padding-left: 0;
+  }
 }
 .section2 .team-flex .team-num .text {
   margin-bottom: 24px;
@@ -484,9 +499,11 @@ body {
 @media (min-width: 700px) {
   .section4 .number__form {
     position: relative;
+    width: 45%;
     margin-top: -90px;
     margin-right: 400px;
     z-index: 2;
+    margin-bottom: 100px;
   }
 }
 .section4 .number__form .padding {
@@ -585,12 +602,23 @@ footer {
 footer .bow {
   padding-top: 20px;
 }
+@media (min-width: 700px) {
+  footer .bow {
+    width: 100%;
+    height: auto;
+  }
+}
 footer .footer__title {
   margin-top: -24px;
   margin-bottom: 24px;
   font-weight: 600;
   font-size: 28px;
   letter-spacing: 0.08em;
+}
+@media (min-width: 700px) {
+  footer .footer__title {
+    margin-top: -160px;
+  }
 }
 footer .footer__desc {
   margin-right: 16px;
@@ -607,8 +635,20 @@ footer .footer__desc {
     margin-left: 280px;
   }
 }
+@media (min-width: 700px) {
+  footer .footer__desc {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 footer .icons {
   margin-bottom: 48px;
+}
+@media (min-width: 700px) {
+  footer .icons {
+    margin-bottom: 32px;
+  }
 }
 footer .links {
   display: flex;
@@ -618,23 +658,79 @@ footer .links {
   font-size: 18px;
   line-height: 40px;
 }
+@media (min-width: 700px) {
+  footer .links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+  }
+}
 footer .contact-info {
+  margin-right: 16px;
+  margin-left: 16px;
   margin-top: -24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+@media (min-width: 700px) {
+  footer .contact-info {
+    margin-right: 280px;
+    margin-left: 280px;
+  }
+}
+@media (min-width: 700px) {
+  footer .contact-info {
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+}
+footer .contact-info .contact-flex {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-footer .contact-info .contact .call-icon {
+@media (min-width: 700px) {
+  footer .contact-info .contact-flex {
+    flex-direction: row;
+  }
+}
+footer .contact-info .contact-flex .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 700px) {
+  footer .contact-info .contact-flex .contact {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+footer .contact-info .contact-flex .contact .call-icon {
   margin-bottom: 8px;
 }
-footer .contact-info .contact .text {
+@media (min-width: 700px) {
+  footer .contact-info .contact-flex .contact .call-icon {
+    margin-bottom: 0px;
+  }
+}
+@media (min-width: 700px) {
+  footer .contact-info .contact-flex .contact .margin-left {
+    margin-left: 20px;
+    text-align: left;
+  }
+}
+footer .contact-info .contact-flex .contact .margin-left .text {
   color: #dddddd;
   margin-bottom: 4px;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
 }
-footer .contact-info .contact .info {
+footer .contact-info .contact-flex .contact .margin-left .info {
   font-weight: 600;
   font-size: 18px;
   line-height: 20px;
@@ -644,6 +740,7 @@ footer .rights {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #dddddd;
 }/*# sourceMappingURL=styles.css.map */

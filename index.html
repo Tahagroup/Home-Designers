@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
   <body>
-    <nav class="desktop-only menu">
+    <nav class="mobile-only menu">
       <img
         class="hamburger"
         src="../dist/assets/images/hamburger.svg"
@@ -115,7 +115,7 @@
           </div>
         </div>
         <!-- Card2  -->
-        <div class="mobile-only comment-card">
+        <div class="desktop-only comment-card">
           <div class="profile">
             <img class="image" src="../dist/assets/images/profile.jpg" />
             <div class="identity">
@@ -136,7 +136,7 @@
           </div>
         </div>
         <!-- Card3  -->
-        <div class="mobile-only comment-card">
+        <div class="desktop-only comment-card">
           <div class="profile">
             <img class="image" src="../dist/assets/images/profile.jpg" />
             <div class="identity">
@@ -413,8 +413,8 @@
       <div class="number__form">
         <div class="padding">
           <div class="dividerTitle__title" id="less-margin">
-            <div class="text">Our work process make your dream true</div>
             <span class="line"></span>
+            <div class="text">Our work process make your dream true</div>
           </div>
           <form>
             <input type="tel" class="tel" placeholder="Your phone number" />
@@ -453,20 +453,30 @@
         <div>Sitemap</div>
         <div>Terms of Use</div>
       </div>
-      <img class="bow" src="../dist/assets/images/bow.svg" alt="bow SVG" />
+      <img
+        class="mobile-only bow"
+        src="../dist/assets/images/bow.svg"
+        alt="bow SVG"
+      />
       <div class="contact-info">
-        <div class="contact">
-          <img class="call-icon" src="../dist/assets/images/Call.svg" />
-          <div class="text">Have a question?</div>
-          <div class="info">310 - 437 - 2766</div>
+        <div class="contact-flex">
+          <div class="contact">
+            <img class="call-icon" src="../dist/assets/images/Call.svg" />
+            <div class="margin-left">
+              <div class="text">Have a question?</div>
+              <div class="info">310 - 437 - 2766</div>
+            </div>
+          </div>
+          <div class="contact">
+            <img class="call-icon" src="../dist/assets/images/email.svg" />
+            <div class="margin-left">
+              <div class="text">Contact us at</div>
+              <div class="info">abc123@gmail.com</div>
+            </div>
+          </div>
         </div>
-        <div class="contact">
-          <img class="call-icon" src="../dist/assets/images/email.svg" />
-          <div class="text">Contact us at</div>
-          <div class="info">abc123@gmail.com</div>
-        </div>
+        <div class="rights">© 2000-2021, All rights reserved</div>
       </div>
-      <div class="rights">© 2000-2021, All rights reserved</div>
     </footer>
   </body>
 </html>
