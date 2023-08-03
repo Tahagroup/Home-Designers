@@ -20,7 +20,6 @@ body {
   margin: 0;
   padding: 0;
 }
-// /////////////////////////////////////////////////////////
 
 .drawer {
   display: flex;
@@ -87,15 +86,6 @@ body {
   }
 }
 
-// @media screen and (max-height: 450px) {
-//   .drawer {
-//     padding-top: 15px;
-//   }
-//   .drawer a {
-//     font-size: 18px;
-//   }
-// }
-// /////////////////////////////////////////////////////////
 .menu {
   background-image: url("../assets/images/stone-bg.jpg");
   background-size: cover;
@@ -107,8 +97,6 @@ body {
 }
 // Section 1
 .section1 {
-  // display: flex;
-  // @include container;
   text-align: left;
   @include desktop {
     background-image: url("../assets/images/stone-bg.jpg");
@@ -617,7 +605,6 @@ footer {
     font-size: 16px;
     line-height: 20px;
     padding-top: 60px;
-    // padding-bottom: 50px;
     margin-bottom: 40px;
     border-bottom: 1px solid $light-gray;
   }
